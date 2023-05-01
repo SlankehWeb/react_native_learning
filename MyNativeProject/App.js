@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image, TextInput, } from 'react-native';
+import { StyleSheet, Text, View, Image, TextInput, Button, } from 'react-native';
 
 export default function App() {
   return (
@@ -19,6 +19,15 @@ export default function App() {
       <View>
         <Text>indtast opgave</Text>
         <TextInput style={styles.input}></TextInput>
+        <Button
+        title="+"
+        onPress={() => Alert.alert('Button pressed')}
+      />
+      </View>
+      <View style={styles.optionscontainer}>
+      <View style={styles.options}>
+      <Text style={styles.optionstext}>Learn React</Text>
+      </View>
       </View>
     </View>
   );
@@ -26,11 +35,12 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
+    width: '100vw',
+    
   },
   header: {
+    alignItems: 'center',
     backgroundColor: '#008080',
   },
   headertext: {
@@ -40,5 +50,19 @@ const styles = StyleSheet.create({
   input: { 
     borderWidth: 1,
     borderColor: '#777',
+  }, 
+  optionscontainer: {
+    alignItems: 'center',
+
+  },
+  options: {
+    justifyContent: 'center',
+    width:'95vw',
+    height:'5vh',
+    borderWidth: 1,
+    borderRadius:3,
+  },
+  optionstext: {
+    paddingLeft: '2vw',
   },
 });
